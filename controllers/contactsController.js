@@ -1,5 +1,5 @@
 
-var Contact = require('../models/Contact');
+var Contact = require('../models/contact');
 var async = require('async');
 
 // Display list of all contact
