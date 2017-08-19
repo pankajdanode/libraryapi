@@ -11,6 +11,8 @@ var expressValidator = require('express-validator');
 
 var app = express();
 
+app.set('port', (process.env.PORT || 3000));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -90,8 +92,12 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(port, function (req, res) {
+/* app.listen(port, function (req, res) {
 	console.log('Library API server started at port : '+port);
+}); */
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
 
 module.exports = app;
